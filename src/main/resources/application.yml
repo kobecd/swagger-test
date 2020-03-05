@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+
+spring:
+  profiles:
+    active: demo
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://172.24.244.8:5306/spa_bank1?useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 222222
+    driverClassName: com.mysql.jdbc.Driver
+    druid:
+      initialSize: 10
+      minIdle: 10
+      maxActive: 150
+      maxWait: 120000
+      minEvictableIdleTimeMillis: 300000
+      timeBetweenEvictionRunsMillis: 30000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: false
+      logAbandoned: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 60
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat
+      session-stat-enable : false
+      connectionProperties : druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
