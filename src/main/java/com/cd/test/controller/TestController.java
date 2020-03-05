@@ -27,6 +27,7 @@ public class TestController {
         return test.getId()+ "====" +test.getName();
     }
 
+
     @GetMapping("/test/{id}")
     @ApiOperation("测试方法2222")
     public String test1(@PathVariable @ApiParam(value = "wei yi id",required = true) String id){
